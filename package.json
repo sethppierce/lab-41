@@ -17,6 +17,8 @@
     "pod-install": "^0.1.38",
     "react": "18.1.0",
     "react-native": "0.70.5",
+    "react-native-config": "^1.5.0",
+    "react-native-dotenv": "^3.4.7",
     "react-native-fs": "^2.20.0",
     "react-native-sms": "^1.11.0"
   },

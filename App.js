@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { ActivityIndicator, View, TextInput, Image, TouchableOpacity, Button, Text, StyleSheet, ScrollView } from 'react-native';
 import * as SMS from 'expo-sms';
 import axios from 'axios';
+import Config from 'react-native-config';
 
 const MyApp = () => {
   const [input, setInput] = useState('');
+  const [apiKey, setApiKey] = useState('')
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false)
   const defaultImages = [
@@ -17,7 +19,6 @@ const MyApp = () => {
   const generateImages = async () => {
     setLoading(true)
     try {
-      const apiKey = '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';
       const response = await axios.post(
         'https://api.openai.com/v1/images/generations',
         {
@@ -32,6 +33,7 @@ const MyApp = () => {
           }
         }
       );
+      setInput('')
       setImages(response.data.data);
       setLoading(false)
     } catch (error) {
@@ -84,6 +86,12 @@ const MyApp = () => {
       </View>
       <TextInput
         style={styles.placeholder}
+        onChangeText={text => setApiKey(text)}
+        value={apiKey}
+        placeholder='Enter your api key here'
+      />
+      <TextInput
+        style={styles.placeholder}
         onChangeText={text => setInput(text)}
         value={input}
         placeholder='Enter your text here'
@@ -134,7 +142,6 @@ const styles = StyleSheet.create({
     alignSelf: "center"
   },
   imageGenerator: {
-    fontFamily: "alata-regular",
     color: "rgba(255,255,255,1)",
     fontSize: 40,
     marginTop: 21,
@@ -168,7 +175,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   generateImages: {
-    fontFamily: "roboto-regular",
     fontSize:20,
     color: "rgba(255,255,255,1)",
     marginTop: 6,
