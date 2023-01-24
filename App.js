@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { ActivityIndicator, View, TextInput, Image, TouchableOpacity, Button, Text, StyleSheet, ScrollView } from 'react-native';
 import * as SMS from 'expo-sms';
 import axios from 'axios';
-import Config from 'react-native-config';
-
 const MyApp = () => {
   const [input, setInput] = useState('');
   const [apiKey, setApiKey] = useState('')
