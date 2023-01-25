@@ -8,9 +8,9 @@ This is a simple app that utilizes the OpenAI API to generate images based on us
 
 2. Install the necessary dependencies by running `yarn` or `npm install` in the root directory.
 
-3. Create an account with OpenAI and obtain an API key. 
+3. Create an account with OpenAI and obtain an API key.
 
-4. Create a .env file in the root directory of the project and add your OpenAI API key as `API_KEY=YOUR_API_KEY`
+4. Create a .env file in the root directory of the project and add your OpenAI API key as `OPENAI_API_KEY=YOUR_API_KEY` and your Bitly URL Shortner API key as  `BITLY_API_KEY`
 
 5. Run the app on your local development server using `yarn start` or `npm start`.
 
@@ -34,3 +34,5 @@ This is a simple app that utilizes the OpenAI API to generate images based on us
 ### UML
 
 [design layout](https://builderx.io/app/1aqv7a77c5gksck0488ococc4gso0g)
+![UML](./Lab-41.png)
+![design](./builderxIO.png)
